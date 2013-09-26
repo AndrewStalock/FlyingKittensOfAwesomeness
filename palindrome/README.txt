@@ -1,4 +1,5 @@
-Remove this line and use this file to document what you changed to fix
-the memory leaks in palindrome. What did you change, and why did you
-have to change it? (The "why" here will be at least as important as
-the "what".)
+We freed rev after the while loop because it was no longer used after that. 
+In the palindrome_test.c we set where palindrome was being called to a variable 
+and then freed that variable after use.
+
+
