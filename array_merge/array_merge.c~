@@ -1,0 +1,40 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "array_merge.h"
+
+int* array_merge(int num_arrays, int* sizes, int** values) {
+  int* countArr;
+  int totalSize = 0;
+  int i;
+  int j;
+  int k;
+  int finalSize;
+  int* finalArr;
+ 
+  for(i = 0; i < num_arrays; ++i){
+    totalSize = totalSize + sizes[i];
+  } 
+  countArr = calloc(totalSize, sizeof(values));
+  for(i = 0; i < num_arrays; ++i){
+    for(j= 0; j < values[i]; ++j){
+      for(k = 0; k < sizes[j]; ++k){
+          
+        if(countArr[values[j][k]] == 0 || countArr[values[j][k]] == NULL){
+	  countArr[values[j][k]] = 1;
+	  ++finalSize;
+	}
+      }
+    }
+  }
+  ++finalSize;
+  finalArr = calloc(finalSize, sizeof(values));
+  finalArr[0] = finalSize;
+  for(i = 0; i < totalSize; ++i){
+    if(count[i] == 1){
+      finalArr[i+1] = i;
+    }
+  }
+
+  return finalArr;
+  
+}
