@@ -1,0 +1,16 @@
+ int i = 0;
+  int j = 0;
+  int len = strlen(str);
+  char* string = str;
+  char* noVow;
+  printf(str);
+  while(i < len){
+    if(string[i] == "a" || string[i] == "e" || string[i] == "i" || string[i] == "o" || string[i] == "u" || string[i] == "A" || string[i] == "E" || string[i] == "I" || string[i] == "O" || string[i] == "U"){
+      i++;
+	 } else {
+      noVow[j] = string[i];
+      j++;
+      i++;
+    }
+  }
+  return noVow;
